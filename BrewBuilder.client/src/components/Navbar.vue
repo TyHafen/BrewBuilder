@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center">
-        <img alt="logo" src="../assets/img/cw-logo.png" height="45" />
+     <h3 class="logo" >BrewBuilder</h3>
       </div>
     </router-link>
     <button
@@ -52,5 +52,10 @@ a:hover {
   border-bottom: 2px solid var(--bs-success);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+.logo{
+  font-size: 40px;
+  color: grey;
+  font-weight: 700;
 }
 </style>
