@@ -55,7 +55,7 @@ a:hover {
 }
 .logo{
   font-size: 40px;
-  color: grey;
+  color: rgb(230, 201, 38);
   font-weight: 700;
 }
 </style>
