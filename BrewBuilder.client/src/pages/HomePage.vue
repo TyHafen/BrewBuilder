@@ -1,8 +1,8 @@
 <template>
-  <div class="container container-fluid m-0 ">
-    <div class="row m-0 p-1">
+  <div class="container-fluid m-0 photo">
+    <div class="row m-0 p-1 ">
       <div class="col-md-2 p-0 m-1 ">
-        <h3> This recipe builder is designed for a homebrew batch of 5.5 gallons.</h3>
+        <h3 class="font-outline"> This recipe builder is designed for a homebrew batch of 5.5 gallons.</h3>
 
       </div>
       <div class="col-md-5 mx-5">
@@ -16,19 +16,32 @@
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Pilsner </label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter amount of malt type">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1"> 2-Row</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter amount of malt type">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Maris Otter</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter amount of malt type">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1"></label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="exampleInputPassword1">Crystal-15</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter amount of malt type">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Crystal-30</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter amount of malt type">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Crystal-45</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter amount of malt type">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Roasted malt</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter amount of malt type">
           </div>
 
           <button type="submit" class="btn btn-primary  m-1">Submit</button>
@@ -62,5 +75,15 @@ export default {
       object-position: center;
     }
   }
+
+}
+.photo{
+  background-image: url("https://img.wallpapersafari.com/desktop/1920/1080/92/8/qJ58eM.jpg");
+  background-size: cover;
+  height: 91.2vh;
+}
+.font-outline{
+  text-shadow: 1px 1px 5px white;
+  font-weight: 700;
 }
 </style>
