@@ -1,9 +1,10 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema
+const ObjectId = Schema.Types.ObjectId
 
 export const RecipeSchema = new Schema(
     {
-        creatorId: { type: Schema.Types.ObjectId, ref: 'Profile', required: true },
+        creatorId: { type: ObjectId, ref: 'Profile', required: true },
         recipeId: { type: String, required: true },
         pilsner: { type: Number, required: false },
         twoRow: { type: Number, required: false },
