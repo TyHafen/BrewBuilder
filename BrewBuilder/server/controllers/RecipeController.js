@@ -7,9 +7,12 @@ export class RecipeController extends BaseController {
     constructor() {
         super('api/recipes')
         this.router
-            .get('', this.getAll)
             .use(Auth0Provider.getAuthorizedUserInfo)
+            .get('', this.getAll)
             .post('', this.createRecipe)
+            .get('/:id', this.getById)
+            .delete('/:id', this.remove)
+
 
 
 
@@ -33,6 +36,16 @@ export class RecipeController extends BaseController {
             next(error)
         }
     }
+    async update(req, res, next) {
+        try {
+            req.body.id = req.params.id
+            req.body.creatorId = req.userInfo.id
+            const updateRecipe = await recipeService.update(req.body)
+            res.send(updateRecipe)
+        } catch (error) {
+            next(error)
+        }
+    }
     async remove(req, res, next) {
         try {
             const recipe = await recipeService.remove(req.params.id)
@@ -40,7 +53,7 @@ export class RecipeController extends BaseController {
             next(error)
         }
     }
-    async getByid(req, res, next) {
+    async getById(req, res, next) {
         try {
             const recipe = await recipeService.getById(req.params.id)
             res.send(recipe)

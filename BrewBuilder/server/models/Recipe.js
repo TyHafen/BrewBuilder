@@ -4,8 +4,8 @@ const ObjectId = Schema.Types.ObjectId
 
 export const RecipeSchema = new Schema(
     {
-        creatorId: { type: ObjectId, ref: 'Profile', required: true },
-        recipeId: { type: String, required: true },
+        name: { type: String, required: true },
+        creatorId: { type: ObjectId, ref: 'account', required: true },
         pilsner: { type: Number, required: false },
         twoRow: { type: Number, required: false },
         marisOtter: { type: Number, required: false },
@@ -21,5 +21,6 @@ RecipeSchema.virtual('creator', {
     localField: 'creatorId',
     foreignField: '_id',
     justOne: true,
-    ref: 'Profile'
+    ref: 'Account',
+    jsutOne: true
 })

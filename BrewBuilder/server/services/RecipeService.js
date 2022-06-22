@@ -1,7 +1,15 @@
 import { dbContext } from "../db/DbContext";
+import { BadRequest, Forbidden } from '../utils/Errors'
 
 
 class RecipeService {
+    async update(update) {
+        const original = await this.getById(update.id)
+        if (original.creatorId.toString() !== update.creatorId) {
+            throw new BadRequest("unauthrozried to edit")
+        }
+
+    }
     async getById(id) {
         const recipe = await dbContext.Recipe.findById(id)
     }
