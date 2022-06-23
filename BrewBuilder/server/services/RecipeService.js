@@ -6,12 +6,13 @@ class RecipeService {
     async update(update) {
         const original = await this.getById(update.id)
         if (original.creatorId.toString() !== update.creatorId) {
-            throw new BadRequest("unauthrozried to edit")
+            throw new BadRequest("unauthorized to edit")
         }
 
     }
     async getById(id) {
         const recipe = await dbContext.Recipe.findById(id)
+        return recipe
     }
     async remove(id) {
         const recipe = await dbContext.Recipe.findByIdAndDelete(id)
