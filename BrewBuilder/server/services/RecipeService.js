@@ -16,7 +16,7 @@ class RecipeService {
     }
     async remove(recipeId, userId) {
         const recipe = await dbContext.Recipe.findById(recipeId)
-        if (recipe.creatorId.toString() != userId) {
+        if (recipe.creatorId.toString() !== userId) {
             throw new Forbidden("Not your recipe to delete")
         } const deleteRecipe = await dbContext.Recipe.findByIdAndDelete(recipeId)
         return `deleted ${deleteRecipe} from your recipe book`
