@@ -20,7 +20,7 @@ export class RecipeController extends BaseController {
     }
     async getAll(req, res, next) {
         try {
-            const recipes = await recipeService.getAll()
+            const recipes = await recipeService.getAll(req.userInfo.id)
             res.send(recipes)
 
         } catch (error) {

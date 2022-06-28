@@ -14,7 +14,11 @@ export const RecipeSchema = new Schema(
         crystal45: { type: Number, required: false },
         roastedMalt: { type: Number, required: false },
         wheat: { type: Number, required: false },
-        oats: { type: Number, required: false }
+        oats: { type: Number, required: false },
+        carapils: { type: Number, required: false },
+        flakedBarley: { type: Number, required: false },
+        vienna: { type: Number, required: false },
+        chocolate: { type: Number, required: false }
     },
     { timestamps: true, toJSON: { virtuals: true } }
 )

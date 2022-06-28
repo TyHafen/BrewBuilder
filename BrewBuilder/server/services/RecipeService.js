@@ -19,15 +19,15 @@ class RecipeService {
         if (recipe.creatorId.toString() !== userId) {
             throw new Forbidden("Not your recipe to delete")
         } const deleteRecipe = await dbContext.Recipe.findByIdAndDelete(recipeId)
-        return `deleted ${deleteRecipe} from your recipe book`
+        return `deleted ${deleteRecipe.name} from your recipe book`
     }
     async createRecipe(body) {
         const recipe = await dbContext.Recipe.create(body)
         return recipe
     }
-    async getAll() {
+    async getAll(userId) {
         const recipes = await dbContext.Recipe.find()
-        return recipes
+        return recipes.filter(r => r.creatorId == userId)
     }
 
 }
