@@ -48,7 +48,8 @@ export class RecipeController extends BaseController {
     }
     async remove(req, res, next) {
         try {
-            const recipe = await recipeService.remove(req.params.id)
+            const recipeToDelete = await recipeService.remove(req.params.id, req.userInfo.id)
+            return res.send(recipeToDelete)
         } catch (error) {
             next(error)
         }

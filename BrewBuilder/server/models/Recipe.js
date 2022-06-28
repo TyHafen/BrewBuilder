@@ -13,6 +13,8 @@ export const RecipeSchema = new Schema(
         crystal30: { type: Number, required: false },
         crystal45: { type: Number, required: false },
         roastedMalt: { type: Number, required: false },
+        wheat: { type: Number, required: false },
+        oats: { type: Number, required: false }
     },
     { timestamps: true, toJSON: { virtuals: true } }
 )
